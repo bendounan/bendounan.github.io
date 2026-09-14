@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Portfolio Abderrezzak Bendounan",
+  "schemaVersion": 1,
+  "description": "Portfolio personnel d'Abderrezzak Bendounan, Data Analyst : à propos, formation, expériences (Alinea, Junior Data Analyst Club, Yassir), projets et contact. Basé sur le template DevFolio, reconstruit en HTML/CSS autonome avec les vraies informations du candidat."
+}
+</script>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Abderrezzak Bendounan - Data Analyst</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<style>
+  :root {
+    color-scheme: light;
+    --navy: #304263;
+    --navy-light: #4a6187;
+    --bg: #ffffff;
+    --bg-soft: #f4f6f9;
+    --text: #2b2f36;
+    --text-soft: #5a6270;
+    --border: #e3e7ee;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  a { text-decoration: none; color: inherit; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .container { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; flex-wrap: wrap; gap: 10px; }
+  .brand { font-weight: 700; color: var(--navy); font-size: 1.1rem; }
+  .navlinks { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+  .navlinks a { font-size: 0.92rem; color: var(--text-soft); font-weight: 500; }
+  .navlinks a:hover { color: var(--navy); }
+  .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+  .lang-toggle button { border: none; background: transparent; padding: 6px 14px; font-size: 0.8rem; font-weight: 700; cursor: pointer; color: var(--text-soft); }
+  .lang-toggle button.active { background: var(--navy); color: #fff; }
+
+  .hero { background: var(--bg-soft); padding: 64px 0 56px; }
+  .hero .container { display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+  .hero-text { flex: 1 1 380px; }
+  .hero-text p.eyebrow { color: var(--navy-light); font-weight: 600; margin: 0 0 6px; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.8rem; }
+  .hero-text h1 { font-size: 2.4rem; margin: 0 0 8px; color: var(--navy); }
+  .hero-tagline { color: var(--text-soft); font-size: 1.05rem; margin: 0 0 24px; min-height: 1.5em; }
+  .typed-role { color: var(--navy); font-weight: 700; }
+  .cursor { display: inline-block; width: 2px; height: 1em; background: var(--navy); margin-left: 2px; vertical-align: -2px; animation: blink-cursor 0.85s steps(1) infinite; }
+  @keyframes blink-cursor { 50% { opacity: 0; } }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+  .btn-primary { background: var(--navy); color: #fff; }
+  .btn-primary:hover { background: var(--navy-light); }
+  .btn-outline { border: 1.5px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: #fff; }
+  .hero-photo { flex: 0 0 220px; }
+  .hero-photo img { width: 220px; height: 220px; object-fit: cover; object-position: center 22%; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 8px 24px rgba(48,66,99,0.2); }
+
+  .section { padding: 56px 0; }
+  .section-header { text-align: center; margin-bottom: 36px; }
+  .section-header p.eyebrow { color: var(--navy-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.8rem; margin: 0 0 6px; }
+  .section-header h2 { color: var(--navy); font-size: 1.7rem; margin: 0; }
+
+  .about-grid { display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start; }
+  .about-text { flex: 1 1 340px; color: var(--text-soft); }
+  .skills { flex: 1 1 340px; }
+  .skill { margin-bottom: 16px; }
+  .skill-label { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 6px; color: var(--text); font-weight: 500; }
+  .skill-track { background: var(--border); border-radius: 6px; height: 8px; overflow: hidden; }
+  .skill-fill { background: var(--navy); height: 100%; border-radius: 6px; }
+
+  .edu-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; }
+  .edu-card h3 { margin: 0 0 4px; color: var(--navy); font-size: 1.02rem; }
+  .edu-card .edu-school { color: var(--text-soft); font-size: 0.9rem; margin: 0 0 6px; font-style: italic; }
+  .edu-card p.edu-desc { margin: 0; color: var(--text-soft); font-size: 0.9rem; }
+  .edu-highlights { margin: 10px 0 0; padding-left: 20px; color: var(--text-soft); font-size: 0.88rem; }
+  .edu-highlights li { margin-bottom: 6px; }
+  .edu-highlights li::marker { color: var(--navy); }
+  .edu-highlights li:last-child { margin-bottom: 0; }
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .cert-card { display: flex; align-items: flex-start; gap: 14px; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; background: #fff; }
+  a.cert-card { transition: box-shadow 0.15s, transform 0.15s; }
+  a.cert-card:hover { box-shadow: 0 8px 20px rgba(48,66,99,0.14); transform: translateY(-2px); }
+  .cert-icon { font-size: 1.6rem; flex: 0 0 auto; line-height: 1; }
+  .cert-body h3 { margin: 0 0 4px; color: var(--navy); font-size: 0.98rem; }
+  .cert-body p.cert-issuer { margin: 0; color: var(--text-soft); font-size: 0.85rem; }
+
+  .timeline { position: relative; padding-left: 28px; border-left: 2px solid var(--border); }
+  .tl-item { position: relative; padding-bottom: 34px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot { position: absolute; left: -34px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--navy); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--navy); }
+  .tl-date { color: var(--navy-light); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .tl-item h3 { margin: 4px 0 2px; color: var(--text); font-size: 1.08rem; }
+  .tl-item h4 { margin: 0 0 8px; color: var(--text-soft); font-weight: 500; font-size: 0.92rem; }
+  .tl-item p { margin: 0; color: var(--text-soft); font-size: 0.92rem; }
+  .tl-list { margin: 0; padding-left: 20px; color: var(--text-soft); font-size: 0.92rem; }
+  .tl-list li { margin-bottom: 8px; }
+  .tl-list li::marker { color: var(--navy); }
+  .tl-list li:last-child { margin-bottom: 0; }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+  .project-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #fff; }
+  .project-top { height: 90px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  .project-top.grad-1 { background: linear-gradient(135deg, #304263, #4a6187); }
+  .project-top.grad-2 { background: linear-gradient(135deg, #4a6187, #7e93b8); }
+  .project-top.grad-3 { background: linear-gradient(135deg, #24314a, #304263); }
+  .project-body { padding: 18px 20px; }
+  .project-body h3 { margin: 0 0 8px; color: var(--navy); font-size: 1rem; }
+  .project-body p { margin: 0 0 10px; color: var(--text-soft); font-size: 0.88rem; }
+  .project-body a.gh-link { font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+  .project-body a.gh-link:hover { text-decoration: underline; }
+  .project-tech { font-size: 0.78rem; color: var(--navy-light); font-weight: 600; margin: 0 0 10px; letter-spacing: 0.02em; }
+  a.project-card { display: block; transition: box-shadow 0.15s, transform 0.15s; }
+  a.project-card:hover { box-shadow: 0 8px 20px rgba(48,66,99,0.14); transform: translateY(-2px); }
+  .gh-note { text-align: center; color: var(--text-soft); font-size: 0.85rem; margin-top: 22px; }
+  .gh-note a { color: var(--navy); font-weight: 600; }
+  .gh-note a:hover { text-decoration: underline; }
+
+  .contact-box { text-align: center; }
+  .contact-row { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 12px; }
+  .contact-item h4 { margin: 0 0 4px; color: var(--navy); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .contact-item p, .contact-item a { color: var(--text-soft); font-size: 0.95rem; }
+  .contact-item a:hover { color: var(--navy); }
+
+  footer { background: var(--navy); color: #e7ebf2; padding: 36px 0 22px; text-align: center; margin-top: 24px; }
+  footer h2 { margin: 0 0 4px; font-size: 1.15rem; }
+  footer p { margin: 2px 0; color: #c3cbdb; font-size: 0.88rem; }
+  footer a { color: #fff; }
+  .credit { margin-top: 18px; font-size: 0.78rem; color: #8b98b4; }
+  .credit a { color: #b7c2da; }
+
+  @media (max-width: 600px) {
+    .hero .container { flex-direction: column; text-align: center; }
+    .btn-row { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#home" class="brand">A. Bendounan</a>
+    <div class="navlinks">
+      <a href="#home" data-t="nav.home">Accueil</a>
+      <a href="#about" data-t="nav.about">À propos</a>
+      <a href="#education" data-t="nav.education">Formation</a>
+      <a href="#certifications" data-t="nav.certs">Certifications</a>
+      <a href="#experience" data-t="nav.experience">Expérience</a>
+      <a href="#portfolio" data-t="nav.projects">Projets</a>
+      <a href="#contact" data-t="nav.contact">Contact</a>
+      <div class="lang-toggle">
+        <button type="button" id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+        <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="hero" id="home">
+  <div class="container">
+    <div class="hero-text">
+      <p class="eyebrow" data-t="hero.eyebrow">Je suis</p>
+      <h1>Abderrezzak Bendounan</h1>
+      <p class="hero-tagline"><span class="typed-role typed-target"></span><span class="cursor" aria-hidden="true"></span><span data-t="hero.tagline.suffix"> &middot; SQL &amp; Python &middot; BI &amp; Machine Learning</span></p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#contact" data-t="hero.contact">Me contacter</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/abderrezzak-bendounan/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="data:image/jpeg;base64,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" alt="Abderrezzak Bendounan">
+    </div>
+  </div>
+</div>
+
+<div class="section" id="about">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow" data-t="about.eyebrow">À propos de moi</p>
+      <h2><span class="typed-target"></span><span class="cursor" aria-hidden="true"></span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text" data-t="about.text">
+        <p>Data Analyst diplômé d'un double Master en Économétrie et Data Science, avec une expérience concrète pour transformer la donnée en décisions business : scoring de churn, segmentation client, pipelines de données fiables et dashboards utilisés directement par les équipes opérationnelles. À l'aise sur toute la chaîne, de l'extraction SQL à la modélisation statistique jusqu'à la restitution claire pour des interlocuteurs non techniques.</p>
+        <p>Rigoureux, curieux, habitué à travailler proche des équipes métier, j'aime relier données, économie et recommandations concrètes.</p>
+      </div>
+      <div class="skills">
+        <div class="skill">
+          <div class="skill-label"><span>SQL &amp; BigQuery</span><span>90%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-label"><span data-t="skill.python">Python (Pandas, NumPy, Scikit-learn, R)</span><span>85%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-label"><span data-t="skill.bi">BI (Power BI, Looker Studio, Tableau, Excel)</span><span>85%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-label"><span data-t="skill.ml">Machine Learning (churn, RFM, prévisions)</span><span>78%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:78%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-label"><span>ETL / dbt</span><span>75%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="education" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow" data-t="edu.eyebrow">Parcours</p>
+      <h2 data-t="edu.title">Formation</h2>
+    </div>
+    <div class="edu-card">
+      <h3 data-t="edu.title1">Magistère Ingénieur Économiste &middot; Master 2, Économétrie et Data Science (Double diplôme)</h3>
+      <p class="edu-school">Aix-Marseille Université &amp; Aix-Marseille School of Economics (AMSE)</p>
+      <p class="edu-desc" data-t="edu.amu">Master en économie, statistique et économétrie du Magistère Ingénieur Économiste, intégré directement en M1, porté par la Faculté d'Économie et de Gestion et l'Aix-Marseille School of Economics (AMSE), avec une forte dimension quantitative et modélisation appliquée.</p>
+      <ul class="edu-highlights" data-t="edu.amu.list">
+        <li>Master 2, parcours Économétrie et Data Science (AMSE), enseigné en anglais : modélisation statistique et économétrique, programmation et machine learning, interprétation et communication de résultats scientifiques.</li>
+      </ul>
+    </div>
+    <div class="edu-card">
+      <h3 data-t="edu.title2">Master 2, Statistique Appliquée et Économétrie</h3>
+      <p class="edu-school">ENSSEA &middot; Koléa, Algérie</p>
+      <p class="edu-desc" data-t="edu.enssea">École nationale supérieure de statistique et d'économie appliquée (ENSSEA), établissement public algérien spécialisé dans la formation aux métiers de la statistique et de l'économie appliquée.</p>
+      <ul class="edu-highlights" data-t="edu.enssea.list">
+        <li>Spécialisation Statistique appliquée et économétrie : modélisation économétrique, analyse de données et méthodes quantitatives appliquées à l'économie.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="certifications">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow" data-t="certs.eyebrow">Mes certifications</p>
+      <h2 data-t="certs.title">Certifications</h2>
+    </div>
+    <div class="certs-grid">
+      <a class="cert-card" href="https://coursera.org/verify/professional-cert/HBFBULDUQX3Y" target="_blank" rel="noopener">
+        <div class="cert-icon">🎓</div>
+        <div class="cert-body">
+          <h3>Google Data Analytics</h3>
+          <p class="cert-issuer">Professional Certificate &middot; Google &middot; Coursera</p>
+        </div>
+      </a>
+      <a class="cert-card" href="https://coursera.org/verify/NE534B9RS9ZP" target="_blank" rel="noopener">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-body">
+          <h3>Supervised Machine Learning: Regression and Classification</h3>
+          <p class="cert-issuer">Stanford Online &amp; DeepLearning.AI &middot; Coursera</p>
+        </div>
+      </a>
+      <div class="cert-card">
+        <div class="cert-icon">🧮</div>
+        <div class="cert-body">
+          <h3>SQL</h3>
+          <p class="cert-issuer">LeetCode</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="experience">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow" data-t="exp.eyebrow">Mon parcours</p>
+      <h2 data-t="exp.title">Expérience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date" data-t="exp.d1">Sept. 2024 &ndash; mars 2026</div>
+        <h3>Data Analyst</h3>
+        <h4>Alinea, France</h4>
+        <ul class="tl-list" data-t="exp.p1">
+          <li>Suivi et optimisation de la performance commerciale : analyse hebdomadaire du CA, du trafic, du taux de transformation et du panier moyen, avec évaluation des opérations promotionnelles et propositions d'actions correctives.</li>
+          <li>Conception et automatisation, sous Looker Studio, de dashboards de pilotage de la performance commerciale, marketing et client, en lien direct avec les directions opérationnelles.</li>
+          <li>Modélisation analytique sous dbt en faits et dimensions, avec stratégies incrémentales, historisation des flux et tests de qualité, pour fiabiliser les données du programme de fidélité.</li>
+          <li>Conception d'un modèle prédictif de churn en machine learning, à partir d'extractions SQL optimisées sur BigQuery, pour identifier les profils à risque et déclencher des campagnes de rétention ciblées.</li>
+          <li>Segmentation dynamique et analyse RFM (Récence, Fréquence, Montant) des clients, pour identifier les segments à forte valeur et personnaliser les stratégies d'activation.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date" data-t="exp.d1b">Mai 2024 &ndash; août 2024</div>
+        <h3 data-t="exp.t1b">Stagiaire de recherche</h3>
+        <h4>Aix-Marseille School of Economics (AMSE) &middot; sous la direction du Pr Badih Ghattas</h4>
+        <ul class="tl-list" data-t="exp.p1b">
+          <li>Stage de recherche en 2<sup>e</sup> année du Magistère Ingénieur Économiste, encadré par le Professeur Badih Ghattas (AMSE), spécialiste des méthodes de classification, de segmentation et d'apprentissage statistique.</li>
+          <li>Travail sur des méthodes de clustering appliquées à des données mixtes (variables quantitatives et qualitatives), dans la continuité des thématiques de recherche du laboratoire (approches multivariées, classification et discrimination).</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date" data-t="exp.d2">Sept. 2023 &ndash; mai 2024</div>
+        <h3>Data Analyst</h3>
+        <h4>Junior Data Analyst Club</h4>
+        <ul class="tl-list" data-t="exp.p2">
+          <li>Nettoyage, structuration et mise en qualité de jeux de données liés à l'usage des bornes de recharge électrique, afin de garantir la fiabilité des analyses et des indicateurs de performance.</li>
+          <li>Analyses exploratoires sur la disponibilité et la performance du réseau (taux d'utilisation, saturation, créneaux sous tension) pour orienter les décisions de déploiement.</li>
+          <li>Production d'analyses spatiales et de visualisations via Python et GeoPandas, pour faciliter l'aide à la décision auprès des équipes métiers.</li>
+          <li>Analyse des comportements d'utilisation (fréquentation, durée d'occupation, répartition géographique), en croisant données opérationnelles internes et données INSEE.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date" data-t="exp.d3">Févr. 2022 &ndash; août 2022</div>
+        <h3 data-t="exp.t3">Data Scientist (Stage)</h3>
+        <h4>Yassir &middot; startup leader en Afrique du Nord</h4>
+        <ul class="tl-list" data-t="exp.p3">
+          <li>Modélisation prédictive en machine learning et feature engineering (saisonnalité, météo, événements), pour affiner les prévisions de flux.</li>
+          <li>Analyse des écarts entre l'offre et la demande, pour comprendre les variations d'activité et anticiper les zones à risque de sous-capacité.</li>
+          <li>Création de tableaux de bord Power BI suivant la disponibilité des chauffeurs, la demande par zone et les indicateurs d'équilibrage.</li>
+          <li>Documentation et fiabilisation des pipelines, pour assurer la qualité, la traçabilité et l'amélioration continue des analyses.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="portfolio" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow" data-t="proj.eyebrow">Mes projets</p>
+      <h2 data-t="proj.title">Projets Data &amp; Analytics</h2>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <a class="project-card" href="https://github.com/bendounan/olist-ecommerce-analysis" target="_blank" rel="noopener">
+        <div class="project-top grad-1">🛒</div>
+        <div class="project-body">
+          <h3>Olist E-commerce Analytics</h3>
+          <p class="project-tech">Python &middot; Pandas &middot; SQL</p>
+          <p data-t="proj.p1">Analyse du dataset public Olist (~100 000 commandes e-commerce brésiliennes) : segmentation RFM, performance de livraison et satisfaction client, en Python et SQL.</p>
+          <span class="gh-link" data-t="proj.viewgh">Voir sur GitHub &rarr;</span>
+        </div>
+      </a>
+      <a class="project-card" href="https://github.com/bendounan/m5-forecasting-accuracy" target="_blank" rel="noopener">
+        <div class="project-top grad-2">📈</div>
+        <div class="project-body">
+          <h3>M5 Forecasting Accuracy</h3>
+          <p class="project-tech">Python &middot; LightGBM &middot; Kaggle</p>
+          <p data-t="proj.p2">Prévision des ventes à 28 jours sur 30 490 séries produit-magasin (compétition Kaggle M5 / Walmart), avec un modèle LightGBM entraîné par magasin.</p>
+          <span class="gh-link" data-t="proj.viewgh">Voir sur GitHub &rarr;</span>
+        </div>
+      </a>
+    </div>
+    <p class="gh-note" data-t="proj.ghnote">D'autres projets sont disponibles sur <a href="https://github.com/bendounan" target="_blank" rel="noopener">mon GitHub</a>.</p>
+  </div>
+</div>
+
+<div class="section" id="contact">
+  <div class="container contact-box">
+    <div class="section-header">
+      <p class="eyebrow" data-t="contact.eyebrow">Contact</p>
+      <h2 data-t="contact.title">Me contacter</h2>
+    </div>
+    <div class="contact-row">
+      <div class="contact-item">
+        <h4>Email</h4>
+        <p><a href="mailto:abderrezzakbendounan@gmail.com">abderrezzakbendounan@gmail.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h4 data-t="contact.phone">Téléphone</h4>
+        <p>+33 7 63 32 30 39</p>
+      </div>
+      <div class="contact-item">
+        <h4>LinkedIn</h4>
+        <p><a href="https://www.linkedin.com/in/abderrezzak-bendounan/" target="_blank" rel="noopener" data-t="contact.visit">Voir le profil</a></p>
+      </div>
+      <div class="contact-item" id="contact-github" style="display:none">
+        <h4>GitHub</h4>
+        <p><a href="#" id="github-link" target="_blank" rel="noopener" data-t="contact.visitgh">Voir le profil</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <h2>Abderrezzak Bendounan</h2>
+    <p>Data Analyst</p>
+    <p><a href="mailto:abderrezzakbendounan@gmail.com">abderrezzakbendounan@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/abderrezzak-bendounan/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p class="credit">Design based on the DevFolio template &middot; Designed by <a href="https://htmlcodex.com" target="_blank" rel="noopener">HTML Codex</a></p>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  fr: {
+    'nav.home': 'Accueil', 'nav.about': 'À propos', 'nav.education': 'Formation',
+    'nav.certs': 'Certifications',
+    'nav.experience': 'Expérience', 'nav.projects': 'Projets', 'nav.contact': 'Contact',
+    'hero.eyebrow': 'Je suis', 'hero.tagline.suffix': ' &middot; SQL &amp; Python &middot; BI &amp; Machine Learning',
+    'hero.contact': 'Me contacter',
+    'about.eyebrow': 'À propos de moi',
+    'about.text': "<p>Data Analyst diplômé d'un double Master en Économétrie et Data Science, avec une expérience concrète pour transformer la donnée en décisions business : scoring de churn, segmentation client, pipelines de données fiables et dashboards utilisés directement par les équipes opérationnelles. À l'aise sur toute la chaîne, de l'extraction SQL à la modélisation statistique jusqu'à la restitution claire pour des interlocuteurs non techniques.</p><p>Rigoureux, curieux, habitué à travailler proche des équipes métier, j'aime relier données, économie et recommandations concrètes.</p>",
+    'skill.python': 'Python (Pandas, NumPy, Scikit-learn, R)', 'skill.bi': 'BI (Power BI, Looker Studio, Tableau, Excel)',
+    'skill.ml': 'Machine Learning (churn, RFM, prévisions)',
+    'edu.eyebrow': 'Parcours', 'edu.title': 'Formation',
+    'edu.title1': "Magistère Ingénieur Économiste &middot; Master 2, Économétrie et Data Science (Double diplôme)",
+    'edu.amu': "Master en économie, statistique et économétrie du Magistère Ingénieur Économiste, intégré directement en M1, porté par la Faculté d'Économie et de Gestion et l'Aix-Marseille School of Economics (AMSE), avec une forte dimension quantitative et modélisation appliquée.",
+    'edu.amu.list': "<li>Master 2, parcours Économétrie et Data Science (AMSE), enseigné en anglais : modélisation statistique et économétrique, programmation et machine learning, interprétation et communication de résultats scientifiques.</li>",
+    'edu.title2': "Master 2, Statistique Appliquée et Économétrie",
+    'edu.enssea': "École nationale supérieure de statistique et d'économie appliquée (ENSSEA), établissement public algérien spécialisé dans la formation aux métiers de la statistique et de l'économie appliquée.",
+    'edu.enssea.list': "<li>Spécialisation Statistique appliquée et économétrie : modélisation économétrique, analyse de données et méthodes quantitatives appliquées à l'économie.</li>",
+    'certs.eyebrow': 'Mes certifications', 'certs.title': 'Certifications',
+    'exp.eyebrow': 'Mon parcours', 'exp.title': 'Expérience',
+    'exp.d1': 'Sept. 2024 &ndash; mars 2026', 'exp.d1b': 'Mai 2024 &ndash; août 2024', 'exp.d2': 'Sept. 2023 &ndash; mai 2024', 'exp.d3': 'Févr. 2022 &ndash; août 2022',
+    'exp.t1b': 'Stagiaire de recherche', 'exp.t3': 'Data Scientist (Stage)',
+    'exp.p1b': "<ul class=\"tl-list\"><li>Stage de recherche en 2<sup>e</sup> année du Magistère Ingénieur Économiste, encadré par le Professeur Badih Ghattas (AMSE), spécialiste des méthodes de classification, de segmentation et d'apprentissage statistique.</li><li>Travail sur des méthodes de clustering appliquées à des données mixtes (variables quantitatives et qualitatives), dans la continuité des thématiques de recherche du laboratoire (approches multivariées, classification et discrimination).</li></ul>",
+    'exp.p1': "<ul class=\"tl-list\"><li>Suivi et optimisation de la performance commerciale : analyse hebdomadaire du CA, du trafic, du taux de transformation et du panier moyen, avec évaluation des opérations promotionnelles et propositions d'actions correctives.</li><li>Conception et automatisation, sous Looker Studio, de dashboards de pilotage de la performance commerciale, marketing et client, en lien direct avec les directions opérationnelles.</li><li>Modélisation analytique sous dbt en faits et dimensions, avec stratégies incrémentales, historisation des flux et tests de qualité, pour fiabiliser les données du programme de fidélité.</li><li>Conception d'un modèle prédictif de churn en machine learning, à partir d'extractions SQL optimisées sur BigQuery, pour identifier les profils à risque et déclencher des campagnes de rétention ciblées.</li><li>Segmentation dynamique et analyse RFM (Récence, Fréquence, Montant) des clients, pour identifier les segments à forte valeur et personnaliser les stratégies d'activation.</li></ul>",
+    'exp.p2': "<ul class=\"tl-list\"><li>Nettoyage, structuration et mise en qualité de jeux de données liés à l'usage des bornes de recharge électrique, afin de garantir la fiabilité des analyses et des indicateurs de performance.</li><li>Analyses exploratoires sur la disponibilité et la performance du réseau (taux d'utilisation, saturation, créneaux sous tension) pour orienter les décisions de déploiement.</li><li>Production d'analyses spatiales et de visualisations via Python et GeoPandas, pour faciliter l'aide à la décision auprès des équipes métiers.</li><li>Analyse des comportements d'utilisation (fréquentation, durée d'occupation, répartition géographique), en croisant données opérationnelles internes et données INSEE.</li></ul>",
+    'exp.p3': "<ul class=\"tl-list\"><li>Modélisation prédictive en machine learning et feature engineering (saisonnalité, météo, événements), pour affiner les prévisions de flux.</li><li>Analyse des écarts entre l'offre et la demande, pour comprendre les variations d'activité et anticiper les zones à risque de sous-capacité.</li><li>Création de tableaux de bord Power BI suivant la disponibilité des chauffeurs, la demande par zone et les indicateurs d'équilibrage.</li><li>Documentation et fiabilisation des pipelines, pour assurer la qualité, la traçabilité et l'amélioration continue des analyses.</li></ul>",
+    'proj.eyebrow': 'Mes projets', 'proj.title': 'Projets Data &amp; Analytics',
+    'proj.p1': 'Analyse du dataset public Olist (~100 000 commandes e-commerce brésiliennes) : segmentation RFM, performance de livraison et satisfaction client, en Python et SQL.',
+    'proj.p2': 'Prévision des ventes à 28 jours sur 30 490 séries produit-magasin (compétition Kaggle M5 / Walmart), avec un modèle LightGBM entraîné par magasin.',
+    'proj.viewgh': 'Voir sur GitHub &rarr;',
+    'proj.ghnote': 'D\'autres projets sont disponibles sur <a href="https://github.com/bendounan" target="_blank" rel="noopener">mon GitHub</a>.',
+    'contact.eyebrow': 'Contact', 'contact.title': 'Me contacter', 'contact.phone': 'Téléphone',
+    'contact.visit': 'Voir le profil', 'contact.visitgh': 'Voir le profil'
+  },
+  en: {
+    'nav.home': 'Home', 'nav.about': 'About', 'nav.education': 'Education',
+    'nav.certs': 'Certifications',
+    'nav.experience': 'Experience', 'nav.projects': 'Projects', 'nav.contact': 'Contact',
+    'hero.eyebrow': "I'm", 'hero.tagline.suffix': ' &middot; SQL &amp; Python &middot; BI &amp; Machine Learning',
+    'hero.contact': 'Contact Me',
+    'about.eyebrow': 'About Me',
+    'about.text': "<p>Data Analyst with a double Master's degree in Econometrics and Data Science, and hands-on experience turning raw data into business decisions: churn scoring, customer segmentation, reliable data pipelines and dashboards used directly by operational teams. Comfortable across the full chain, from SQL extraction to statistical modeling to clear reporting for non-technical stakeholders.</p><p>Rigorous, curious, and used to working close to business teams, I like connecting data, economics and concrete recommendations.</p>",
+    'skill.python': 'Python (Pandas, NumPy, Scikit-learn, R)', 'skill.bi': 'BI (Power BI, Looker Studio, Tableau, Excel)',
+    'skill.ml': 'Machine Learning (churn, RFM, forecasting)',
+    'edu.eyebrow': 'Background', 'edu.title': 'Education',
+    'edu.title1': "Magistère Ingénieur Économiste &middot; Master's, Econometrics and Data Science (Dual Degree)",
+    'edu.amu': "Master's degree in economics, statistics and econometrics from the Magistère Ingénieur Économiste, joined directly at M1 level, run jointly by the Faculty of Economics and Management and the Aix-Marseille School of Economics (AMSE), with a strong quantitative and applied modeling focus.",
+    'edu.amu.list': "<li>Master's, Econometrics and Data Science track (AMSE), taught in English: statistical and econometric modeling, coding and machine learning, interpretation and communication of scientific results.</li>",
+    'edu.title2': "Master's Degree, Applied Statistics and Econometrics",
+    'edu.enssea': "National Higher School of Statistics and Applied Economics (ENSSEA), a public Algerian institution specialized in training for statistics and applied economics careers.",
+    'edu.enssea.list': "<li>Applied Statistics and Econometrics specialization: econometric modeling, data analysis and quantitative methods applied to economics.</li>",
+    'certs.eyebrow': 'My Certifications', 'certs.title': 'Certifications',
+    'certs.date1': 'Jul. 2022', 'certs.date2': 'Nov. 2022',
+    'exp.eyebrow': 'My Resume', 'exp.title': 'Experience',
+    'exp.d1': 'Sept. 2024 &ndash; March 2026', 'exp.d1b': 'May 2024 &ndash; August 2024', 'exp.d2': 'Sept. 2023 &ndash; May 2024', 'exp.d3': 'Feb. 2022 &ndash; Aug. 2022',
+    'exp.t1b': 'Research Intern', 'exp.t3': 'Data Scientist (Internship)',
+    'exp.p1b': "<ul class=\"tl-list\"><li>Research internship in year 2 of the Magistère Ingénieur Économiste, supervised by Professor Badih Ghattas (AMSE), a specialist in classification, segmentation and statistical learning methods.</li><li>Worked on clustering methods applied to mixed data (quantitative and qualitative variables), in line with the lab's research themes (multivariate approaches, classification and discrimination).</li></ul>",
+    'exp.p1': "<ul class=\"tl-list\"><li>Weekly tracking and optimization of commercial performance: revenue, footfall, conversion rate and average basket size, with evaluation of promotional operations and corrective action proposals.</li><li>Design and automation, in Looker Studio, of dashboards for commercial, marketing and customer performance, used directly by operational teams.</li><li>Analytical modeling in dbt (facts and dimensions), with incremental strategies, flow history and quality tests, to make the loyalty program's data reliable.</li><li>Design of a churn prediction model in machine learning, from optimized SQL extractions on BigQuery, to flag at-risk customers and trigger targeted retention campaigns.</li><li>Dynamic segmentation and RFM analysis (Recency, Frequency, Monetary) of customers, to identify high-value segments and personalize activation strategies.</li></ul>",
+    'exp.p2': "<ul class=\"tl-list\"><li>Cleaning, structuring and quality control of datasets related to electric charging station usage, to ensure the reliability of analyses and performance indicators.</li><li>Exploratory analysis of network availability and performance (utilization rate, saturation, peak time slots) to guide deployment decisions.</li><li>Spatial analysis and visualizations via Python and GeoPandas, to support decision-making for business teams.</li><li>Analysis of usage behavior (footfall, dwell time, geographic distribution), crossing internal operational data with INSEE data.</li></ul>",
+    'exp.p3': "<ul class=\"tl-list\"><li>Predictive modeling in machine learning and feature engineering (seasonality, weather, events), to refine flow forecasts.</li><li>Analysis of supply/demand gaps, to understand activity variations and anticipate under-capacity risk zones.</li><li>Creation of Power BI dashboards tracking driver availability, demand by zone, and balancing indicators.</li><li>Documentation and reliability improvements of pipelines, to ensure quality, traceability and continuous improvement of analyses.</li></ul>",
+    'proj.eyebrow': 'My Work', 'proj.title': 'Data &amp; Analytics Projects',
+    'proj.p1': 'Analysis of the public Olist e-commerce dataset (~100,000 Brazilian orders): RFM segmentation, delivery performance and customer satisfaction, in Python and SQL.',
+    'proj.p2': '28-day-ahead sales forecasting across 30,490 product-store series (Kaggle M5 / Walmart competition), using a LightGBM model trained per store.',
+    'proj.viewgh': 'View on GitHub &rarr;',
+    'proj.ghnote': 'More projects are available on <a href="https://github.com/bendounan" target="_blank" rel="noopener">my GitHub</a>.',
+    'contact.eyebrow': 'Contact', 'contact.title': 'Get In Touch', 'contact.phone': 'Phone',
+    'contact.visit': 'Visit Profile', 'contact.visitgh': 'Visit Profile'
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.querySelectorAll('[data-t]').forEach(function(el) {
+    const key = el.getAttribute('data-t');
+    const val = translations[lang][key];
+    if (val !== undefined) el.innerHTML = val;
+  });
+  try { localStorage.setItem('portfolio-lang', lang); } catch (e) {}
+}
+
+(function initLang() {
+  var saved = 'fr';
+  try { saved = localStorage.getItem('portfolio-lang') || 'fr'; } catch (e) {}
+  setLang(saved);
+})();
+
+(function typedRoles() {
+  var roles = ['Data Analyst', 'Data Engineer', 'Analytics Engineer', 'BI Analyst'];
+  var els = document.querySelectorAll('.typed-target');
+  if (!els.length) return;
+  var roleIndex = 0, charIndex = 0, deleting = false;
+  function setText(text) {
+    els.forEach(function(el) { el.textContent = text; });
+  }
+  function tick() {
+    var current = roles[roleIndex];
+    if (!deleting) {
+      charIndex++;
+      setText(current.slice(0, charIndex));
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(tick, 1400);
+        return;
+      }
+    } else {
+      charIndex--;
+      setText(current.slice(0, charIndex));
+      if (charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+    }
+    setTimeout(tick, deleting ? 45 : 85);
+  }
+  tick();
+})();
+</script>
+
+</body>
+</html>
